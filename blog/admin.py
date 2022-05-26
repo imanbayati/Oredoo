@@ -4,7 +4,6 @@ from blog.models import Post
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_date', 'published_date','status')
-    fields = ( 'title',)
     empty_value_display = '-empty-'
     date_hierarchy = 'published_date'
     list_filter = ('title', 'created_date', 'published_date','status')
