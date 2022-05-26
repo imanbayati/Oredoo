@@ -1,0 +1,135 @@
+
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+    <!--section-heading-->
+    <div class="section-heading " >
+        <div class="container-fluid">
+             <div class="section-heading-2">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="section-heading-2-title">
+                             <h1>Contact us</h1>
+                             <p class="links"><a href="{% url 'website:home' %}">Home <i class="las la-angle-right"></i></a> Contact Us</p>
+                         </div>
+                     </div>  
+                 </div>
+             </div>
+         </div>
+    </div>
+
+    <!--contact-->
+    <section class="contact">
+        <div class="container-fluid">
+            <div class="contact-area">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="contact-image">
+                            <img src="{% static 'img/other/contact.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-info">
+                            <h3>feel free to contact us</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deserunt suscipit error deleniti
+                                porro, pariatur voluptatem iste quos maxime aspernatur.</p>
+                        </div>
+                        <!--form-->
+                        <form action="assets/php/mail.php" class="form contact_form " method="POST" id="main_contact_form">
+                            <div class="alert alert-success contact_msg" style="display: none" role="alert">
+                                Your message was sent successfully.
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Name*" required="required">
+                            </div>
+                    
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email*" required="required">
+                            </div>
+                    
+                            <div class="form-group">
+                                <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject*" required="required">
+                            </div>
+                    
+                            <div class="form-group">
+                                <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Message*" required="required"></textarea>
+                            </div>
+                    
+                            <button type="submit" name="submit" class="btn-custom">Send Message</button>
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>        
+
+ 
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-area">
+            <div class="footer-area-content">
+                <div class="container-fluid">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <div class="menu">
+                                <h6>Menu</h6>
+                                <ul>
+                                    <li><a href="{% url 'website:home' %}">Homepage</a></li>
+                                    <li><a href="{% url 'website:about' %}">about us</a></li>
+                                    <li><a href="{% url 'website:contact' %}">contact us</a></li>
+                                    <li><a href="#">privarcy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--newslatter-->
+                        <div class="col-md-6">
+                            <div class="newslettre">
+                                <div class="newslettre-info">
+                                    <h3>Subscribe To Our Newsletter</h3>
+                                    <p>Sign up for free and be the first to get notified about new posts.</p>
+                                </div>
+                                <form action="#" class="newslettre-form">
+                                    <div class="form-flex">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your Email Adress" required="required">
+                                        </div>
+                                        <button class="submit-btn" type="submit">
+                                            <i class="fas fa-paper-plane"></i>
+                                        
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--/-->
+
+                        <div class="col-md-3">
+                            <div class="menu">
+                                <h6>Follow us</h6>
+                                <ul>
+                                    <li><a href="#">facebook</a></li>
+                                    <li><a href="#">instagram</a></li>
+                                    <li><a href="#">youtube</a></li>
+                                    <li><a href="#">twitter</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <!--footer-copyright-->
+            <div class="footer-area-copyright">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-lg-12">
+                           <div class="copyright">
+                            <p>© 2022,  AssiaGroupe, All Rights Reserved.</p>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
