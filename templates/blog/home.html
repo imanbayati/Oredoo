@@ -35,7 +35,7 @@
                             <div class="post-list-content">
                                 <img class="img-responsive img-fluid my-4" src="{{post.image.url}}" alt="blog" style="width: 100%; max-height: 430px;">
                                 <h4 class="entry-title">
-                                    <a href="{% url 'blog:single' %}">{{post.title}} </a>
+                                    <a href="{% url 'blog:single' pid=post.id %}">{{post.title}} </a>
                                 </h4>  
                                 <ul class="entry-meta">
                                     <li class="post-author"> <a href="author.html">{{post.author.username}}</a></li>

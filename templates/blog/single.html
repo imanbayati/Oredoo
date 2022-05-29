@@ -4,7 +4,7 @@
     <!--post-single-->
     <section class="post-single post-single-layout-2">
         <div class="post-single-image">
-            <img src="{% static 'img/blog/lg-1.jpg' %}" alt="">
+            <img style="width: 100%; height: 566px;" src="{{post.image.url}}" alt="">
         </div>
           
         <div class="container-fluid">
@@ -14,149 +14,19 @@
                     <div class="theiaStickySidebar">
                              <!--post-single-title-->
                              <div class="post-single-title">  
-                                <h3> Brand is just a perception, and perception will match reality over time</h3>        
+                                <h3> {{post.title}}</h3>        
                                 <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/1.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1"> <span class="line"></span> Livestyle</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
+                                    <li class="post-author-img"><img src="{% static 'img/author/1.jpg' %}" alt=""></li>
+                                    <li class="post-author"> <a href="author.html">{{post.author.username}}</a></li>
+                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1"> <span class="line"></span> {{post.category.name}}</a></li>
+                                    <li class="post-date"> <span class="line"></span> {{post.published_date|date:"d M Y"}}</li>
                                 </ul>
                                 
                             </div>
 
                             <!--post-single-content-->
                             <div class="post-single-content">
-                                <p>
-                                    Its sometimes her behaviour are contented. Do listening am eagerness oh objection collected. Together gay feelings continue
-                                    juvenile had off Unknown may service 
-                                    subject her letters one bed. Child years noise ye in forty. Loud in this in both
-                                    hold. My entrance me is disposal bachelor remember relation
-                                </p>
-                                <h4> Make it simple, but significant. </h4>
-
-                                <p>
-                                    Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards. Continuing melancholy especially
-                                    so to. Me unpleasing  impossible in attachment announcing so astonished. What ask leaf may nor upon door. Tended remain
-                                    my do stairs. Oh smiling amiable am so visited cordial in offices hearted.
-                                </p>
-                            
-                                <p>
-                                    Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards. Continuing melancholy especially
-                                    so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon door. Tended remain
-                                    my do stairs. Oh smiling amiable am so visited cordial in offices hearted.
-                                        Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards. Continuing melancholy especially
-                                    so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon door. Tended remain my
-                                    do stairs. Oh smiling amiable am so visited cordial in offices hearted.
-                                        Waiting him new lasting towards. Continuing melancholy especially so to. Me unpleasing impossible in attachment announcing
-                                    so astonished. What ask leaf may nor upon door. Tended remain my do stairs.
-                                    
-                                Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                                    in culpa qui officia
-                                    deserunt mollit anim id est laborum.
-                                </p>
-                                <h4>  Simplicity is the ultimate sophistication</h4>
-                            
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                    non proident.
-                                </p>
-                                <div class="image-groupe">
-                                    <div class="image">
-                                        <img src="assets/img/blog/25.jpg" alt="">
-                                
-                                    </div>
-                                    <div class="image">
-                                        <img src="assets/img/blog/21.jpg" alt="">
-                                        
-                                    </div>
-                                </div>
-                        
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor Unknown may service in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                    dolor Unknown may service in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                    occaecat cupidatat non proident.
-                                </p>
-                                
-                                <div class="quote">
-                                    <div>
-                                        <i class="las la-quote-left"></i>
-                                    </div>
-                                    <div>
-                                        <p>
-                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam corrupti voluptatum, tenetur tempore suscipit veniam molestiae
-                                            exercitationem, praesentium ea molestias doloremque alias voluptatibus fuga quibusdam placeat aspernatur, harum
-                                            blanditiis iure.
-                                        </p>
-                                        <small>Henry David Thoreau.</small>
-                                    </div>
-
-                                </div>
-                            
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident.
-                                </p>
-                                <h4> Leave it better than you found it </h4>
-                                
-                                <p>
-                                    Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards. Continuing melancholy especially
-                                    so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon door. Tended remain
-                                    my do stairs. Oh smiling amiable am so visited cordial in offices hearted.
-                                </p>
-                                <div class="image-groupe">
-                                    <div class="image">
-                                        <img src="assets/img/blog/13.jpg" alt="">
-                                
-                                    </div>
-                                    <div class="image">
-                                        <img src="assets/img/blog/3.jpg" alt="">
-                                        
-                                    </div>
-                                       <div class="image">
-                                            <img src="assets/img/blog/11.jpg" alt="">
-                                        </div>
-                                </div>
-                                        
-                                <p>
-                                    Oh acceptance apartments up sympathize astonished delightful. Waiting him new lasting towards. Continuing melancholy especially
-                                    so to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon door.
-                                    Tended remain my do stairs. Oh smiling amiable am so visited cordial in offices hearted. Oh acceptance apartments
-                                    up sympathize astonished delightful. Waiting him new lasting towards. Continuing melancholy especially so
-                                    to. Me unpleasing impossible in attachment announcing so astonished. What ask leaf may nor upon door. Tended
-                                    remain my do stairs. Oh smiling amiable am so visited cordial in offices hearted. Waiting him new lasting
-                                    towards. Continuing melancholy especially so to. Me unpleasing impossible in attachment announcing so astonished.
-                                    What ask leaf may nor upon door. Tended remain my do stairs.
-                                Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-                                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                                    in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
-                            
-                                <ul class="list">
-                                    <li>Digital design is like painting, except the paint never dries. </li>
-                                    <li>Creativity is only as obscure as your reference</li>
-                                    <li>Whitespace is like air: it is necessary for design to breathe.</li>
-                                    <li>You don’t have to be ‘a creative’ to be creative.</li>
-                                    <li>The best way to predict the future is to create it</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-                                    nulla pariatur.
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                </p>
+                                <p>{{post.content}}</p>
                             </div>
                             
                             <!--post-single-bottom-->
@@ -164,21 +34,8 @@
                                 <div class="tags">
                                     <p>Tags:</p>
                                     <ul class="list-inline">
-                                        <li >
-                                            <a href="blog-layout-2.html">brading</a>
-                                        </li>
-                                        <li >
-                                            <a href="blog-layout-2.html">marketing</a>
-                                        </li>
-                                        <li >
-                                            <a href="blog-layout-3.html">tips</a>
-                                        </li>
-                                        <li >
-                                            <a href="blog-layout-4.html">design</a>
-                                        </li>
-                                        <li >
-                                            <a href="blog-layout-5.html">business
-                                            </a>
+                                        <li>
+                                            <a href="blog-layout-5.html">{{post.category.name}}</a>
                                         </li>
                                     </ul>
                                 </div>

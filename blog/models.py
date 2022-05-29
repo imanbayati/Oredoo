@@ -15,7 +15,7 @@ class Post(models.Model):
     content = models.TextField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE,null=True) 
     #tags
-    image = models.ImageField(upload_to='blog/',default='blog/default.jpg')
+    image = models.ImageField(upload_to='blog/',default='blog/empty.jpg')
     author = models.ForeignKey(User,on_delete=models.CASCADE)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)

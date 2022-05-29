@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'website',
     'django_jinja',
     'blog',
-    'django_summernote',
 ]
 
 MIDDLEWARE = [
