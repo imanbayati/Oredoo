@@ -30,162 +30,24 @@
                 <div class="col-lg-8 oredoo-content">
                     <div class="theiaStickySidebar">
                          <!--post 1-->
+                        {% for post in posts %}
                         <div class="post-list post-list-style5 pt-0">
                             <div class="post-list-content">
+                                <img class="img-responsive img-fluid my-4" src="{{post.image.url}}" alt="blog" style="width: 100%; max-height: 430px;">
                                 <h4 class="entry-title">
-                                    <a href="{% url 'blog:single' %}">Everything is designed. Few things are designed well. </a>
+                                    <a href="{% url 'blog:single' %}">{{post.title}} </a>
                                 </h4>  
                                 <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/1.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
+                                    <li class="post-author"> <a href="author.html">{{post.author.username}}</a></li>
                                     <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
+                                    <li class="post-date"> <span class="line"></span> {{post.published_date|date:'d M Y'}}</li>
                                 </ul>
                                 <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
+                                    <p>{{post.content}}</p>
                                 </div>
                             </div>
                         </div>
-                        <!--post 2-->
-                          <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html">Design is as much an act of spacing as an act of marking. </a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/2.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-
-                        <!--post 3-->
-                        <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html">Design adds value faster than it adds costs. </a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/3.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-
-                        <!--post 4-->
-                        <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html">Designers are meant to be loved, not to be understood </a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/4.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-
-                        <!--post 5-->
-                        <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html">The function of design is letting design function</a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/5.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-
-                        <!--post 6-->
-                        <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html"> Have no fear of perfection -- you’ll never reach it </a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/6.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-
-                        <!--post 7-->
-                        <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html">Styles come and go. Good design is a language, not a style. </a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/1.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-
-                        <!--post 8-->
-                        <div class="post-list post-list-style5">
-                            <div class="post-list-content">
-                                <h4 class="entry-title">
-                                    <a href="post-single.html">Design is as much an act of spacing as an act of marking. </a>
-                                </h4>  
-                                <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="assets/img/author/2.jpg" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">Meriam Smith</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
-                                    <li class="post-date"> <span class="line"></span> february 10 ,2022</li>
-                                </ul>
-                                <div class="post-exerpt">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                        Ut est minus iste in accusantium repellat repudiandae nulla blanditiis iusto dolores!</p>
-                                </div>
-                            </div>
-                        </div>
-                      
+                        {% endfor %}
 
                         <!--pagination-->
                         <div class="pagination">
