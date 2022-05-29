@@ -39,11 +39,11 @@
                                 </h4>  
                                 <ul class="entry-meta">
                                     <li class="post-author"> <a href="author.html">{{post.author.username}}</a></li>
-                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>design</a></li>
+                                    <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>{{post.category.name}}</a></li>
                                     <li class="post-date"> <span class="line"></span> {{post.published_date|date:'d M Y'}}</li>
                                 </ul>
                                 <div class="post-exerpt">
-                                    <p>{{post.content}}</p>
+                                    <p>{{post.content|truncatechars:200}}</p>
                                 </div>
                             </div>
                         </div>

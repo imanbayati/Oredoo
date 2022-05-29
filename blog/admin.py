@@ -1,12 +1,14 @@
 from django.contrib import admin
-from blog.models import Post
+from blog.models import Post,Category
+from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'created_date', 'published_date','status')
-    empty_value_display = '-empty-'
-    date_hierarchy = 'published_date'
-    list_filter = ('title', 'created_date', 'published_date','status')
-    search_fields = ('title', 'created_date', 'published_date','status')
+class PostAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content',)
 
 admin.site.register(Post,PostAdmin)
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', )
+
+admin.site.register(Category)
