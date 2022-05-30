@@ -1,69 +1,16 @@
+{% load static %}
 <div class="widget ">
     <div class="widget-title">
         <h5>Categories</h5>
     </div>
     <div class="widget-categories">
-        <a class="category-item" href="#">
+        {% for cat in categories %}
+        <a class="category-item" href="{% url 'blog:category' cat_name=cat.name %}">
             <div class="image">
-                <img src="assets/img/categories/1.jpg" alt="">
+                <img src="{{cat.image.url}}" alt="">
             </div>
-            <p>Design   </p>
+            <p>{{cat.name}}</p>
         </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/2.jpg" alt="">
-            </div>
-            <p>Branding </p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/3.jpg" alt="">
-            </div>
-            <p>marketing </p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/4.jpg" alt="">
-            </div>
-            <p>food </p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/5.jpg" alt="">
-            </div>
-            <p>technology </p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/6.jpg" alt="">
-            </div>
-            <p>fashion </p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/7.jpg" alt="">
-            </div>
-            <p>mobile </p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/8.jpg" alt="">
-            </div>
-            <p>livestyle</p>
-        </a>
-
-        <a class="category-item" href="#">
-            <div class="image">
-                <img src="assets/img/categories/9.jpg" alt="">
-            </div>
-            <p>healty </p>
-        </a>
+        {% endfor %}
     </div>
 </div>
