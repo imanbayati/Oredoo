@@ -7,8 +7,7 @@ from blog.models import Post,Category
 
 def home_page(request):
     categoies = Category.objects.all()
-    posts = Post.objects.filter(status=1)
-    context = {'categoies': categoies,'posts':posts}
+    context = {'categoies': categoies}
     return render(request,'website/home.html',context)
 
 def about_page(request):
