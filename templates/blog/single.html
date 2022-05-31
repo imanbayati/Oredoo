@@ -34,9 +34,11 @@
                                 <div class="tags">
                                     <p>Tags:</p>
                                     <ul class="list-inline">
+                                        {% for tag in post.tag.all %}
                                         <li>
-                                            <a href="blog-layout-5.html">{{post.category.name}}</a>
+                                            <a href="{% url 'blog:tag' tag_name=tag.name %}">{{tag.name}}</a>
                                         </li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                                 <div class="social-media">

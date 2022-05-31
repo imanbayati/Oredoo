@@ -18,6 +18,7 @@ def blog_single_page(request,pid):
     post = get_object_or_404(Post,pk=pid)
     tags = Tag.objects.all()
     categories = Category.objects.all()
+    #objects = post.objects.all()
     context = {'post':post,'categories':categories,'tags':tags}
     return render(request,'blog/single.html',context)
 
