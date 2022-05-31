@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'website',
     'django_jinja',
     'blog',
+    'taggit'
 ]
 
 MIDDLEWARE = [
