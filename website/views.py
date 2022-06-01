@@ -1,13 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Post,Category
+from website.forms import NewsletterForm
 
 
 # Create your views here.
 
 def home_page(request):
     categoies = Category.objects.all()
-    context = {'categoies': categoies}
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = NewsletterForm() 
+    context = {'categoies': categoies,"form":form}
     return render(request,'website/home.html',context)
 
 def about_page(request):

@@ -1,6 +1,7 @@
 from django.shortcuts import render , get_object_or_404
 from blog.models import Post,Category
 from taggit.models import Tag
+
 # Create your views here.
 def blog_home_page(request,**kwargs):
     posts = Post.objects.filter(status=1)
