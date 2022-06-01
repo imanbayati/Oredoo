@@ -5527,3 +5527,6 @@ input:checked + .slider:before {
     background-color: #101213;
   }
 }
+.mas_alert{
+  width: 100%;
+}

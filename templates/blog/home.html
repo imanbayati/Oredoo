@@ -2,24 +2,23 @@
         {% load static %}
         {% block content %}
 
-
-   <!--section-heading-->
-   <div class="section-heading" style="background-image: url('{% static 'img/other/bg-cat-1.jpg' %}')">
-        <div class="container-fluid">
-            <div class="section-heading-5"  >
-                <div class="row">
-                    <div class="col-lg-10">
-                        <div class="section-heading-5-title">
-                            <p class="links"><a href="{% url 'website:home' %}">Home <i class="las la-angle-right"></i></a> Blog</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia, adipisci odio iusto aperiam ea et 
-                                obcaecati! Nulla similique est  possimus rerum. Tempora quas sint ex, doloremque quis aspernatur quaerat.</p>
-                        </div>
-                    </div>  
+        <div class="section-heading " >
+            <div class="container-fluid">
+                <div class="section-heading-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-heading-2-title">
+                                {% block breadcrumbs %}
+                                <h1>Blog</h1>
+                                    <p class="links"><a href="{% url 'website:home' %}">Home <i class="las la-angle-right"></i></a> Blog</p>
+                                {% endblock %}
+                            </div>
+                        </div>  
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
- 
+    
  
     <!-- blog-layout-5-->
     <section class="blog-layout-5">
@@ -74,7 +73,7 @@
                 <!--sidebar-->
                 <div class="col-lg-4 oredoo-sidebar">
                     <div class="theiaStickySidebar">
-                        <div class="sidebar">
+                        <div class="sidebar mt-5">
                            <!--search-->
                             {% include 'blog/search.html' %}
                               <!--categories-->
