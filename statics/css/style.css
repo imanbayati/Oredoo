@@ -283,7 +283,8 @@ ul {
 }
 
 /*buttons*/
-.btn-custom {
+
+.btn-custom,.btn-contact{
   cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -306,7 +307,7 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 
-.btn-custom:hover, .btn-custom:focus {
+.btn-custom:hover, .btn-custom:focus,.btn-contact:hover,.btn-contact:focus {
   color: #191B1D;
   background-color: #ffffff;
 }

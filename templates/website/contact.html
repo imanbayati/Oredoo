@@ -35,10 +35,8 @@
                                 porro, pariatur voluptatem iste quos maxime aspernatur.</p>
                         </div>
                         <!--form-->
-                        <form action="assets/php/mail.php" class="form contact_form " method="POST" id="main_contact_form">
-                            <div class="alert alert-success contact_msg" style="display: none" role="alert">
-                                Your message was sent successfully.
-                            </div>
+                        <form action="{% url 'website:contact' %}" method="post">
+                            {% csrf_token %}         
                             <div class="form-group">
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Name*" required="required">
                             </div>
@@ -55,7 +53,7 @@
                                 <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Message*" required="required"></textarea>
                             </div>
                     
-                            <button type="submit" name="submit" class="btn-custom">Send Message</button>
+                            <button type="submit" class="btn-contact">Send Message</button>
                         </form>
                     </div>
                 </div> 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Post,Category
-from website.forms import NewsletterForm
+from website.forms import NewsletterForm,ContactForm
 from django.contrib import messages
 
 
@@ -24,4 +24,13 @@ def about_page(request):
     return render(request,'website/about.html')
 
 def contact_page(request):
-    return render(request,'website/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'your message was sent')
+        else:
+            messages.error(request,'your message was not sent')
+    form = ContactForm()
+    context = {'form':form}
+    return render(request,'website/contact.html',context)
