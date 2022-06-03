@@ -31,7 +31,7 @@
                         {% for post in posts %}
                         <div class="post-list post-list-style5 pt-0">
                             <div class="post-list-content">
-                                <img class="img-responsive img-fluid my-4" src="{{post.image.url}}" alt="blog" style="width: 100%; max-height: 430px;">
+                                <img class="img-responsive img-fluid my-4" src="{{post.image.url}}" alt="blog" style="width: 730px; max-height: 430px;">
                                 <h4 class="entry-title">
                                     <a href="{% url 'blog:single' pid=post.id %}">{{post.title}} </a>
                                 </h4>  
@@ -74,8 +74,6 @@
                 <div class="col-lg-4 oredoo-sidebar">
                     <div class="theiaStickySidebar">
                         <div class="sidebar mt-5">
-                           <!--search-->
-                            {% include 'blog/search.html' %}
                               <!--categories-->
                             {% include 'blog/categories.html' %}
 

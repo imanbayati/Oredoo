@@ -19,7 +19,16 @@ def blog_single_page(request,pid):
     post = get_object_or_404(Post,pk=pid)
     tags = Tag.objects.all()
     categories = Category.objects.all()
-    #objects = post.objects.all()
     context = {'post':post,'categories':categories,'tags':tags}
     return render(request,'blog/single.html',context)
 
+def blog_search_page(request):
+    posts = Post.objects.filter(status=1)
+    if request.method == 'GET':
+        result = request.GET.get('s')
+        posts = posts.filter(content__contains=result)
+        if posts:
+            context = {'posts':posts}
+            return render(request,'blog/home.html',context)
+        else:
+            return render(request,'404.html')
