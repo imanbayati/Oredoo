@@ -48,6 +48,28 @@
                         {% endfor %}
 
                         <!--pagination-->
+                        <div class="prev_next">
+
+                            {% if page_object.has_previous %}
+                              <a class="prev btn btn-info" href="?page={{page_object.previous_page_number}}">Prev</a>
+                            {% endif %}
+                            {% if page_object.has_next %}
+                              <a class="next btn btn-info" href="?page={{page_object.next_page_number}}">Next</a>
+                            {% endif %}
+                            <div class="pages">
+                              <ul>
+                              {% for pg in page_object.paginator.page_range %}
+                                {% if page_object.number == pg %}
+                                  <li><a href="?page={{pg}}" class="btn btn-default">{{pg}}</a></li>
+                                {% else %}
+                                  <li><a href="?page={{pg}}" class="btn">{{pg}}</a></li>
+                                {% endif %}
+                              {% endfor %}
+                              </ul>
+                            </div>
+                            <span class="clear_both"></span>
+                        
+                          </div>
                         <div class="pagination">
                             <div class="pagination-area">
                                 <div class="row"> 

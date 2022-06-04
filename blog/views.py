@@ -1,7 +1,7 @@
 from django.shortcuts import render , get_object_or_404
 from blog.models import Post,Category
 from taggit.models import Tag
-
+from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 # Create your views here.
 def blog_home_page(request,**kwargs):
     posts = Post.objects.filter(status=1)
@@ -9,6 +9,14 @@ def blog_home_page(request,**kwargs):
         posts = posts.filter(category__name=kwargs['cat_name'])
     if kwargs.get('tag_name'):
         posts = posts.filter(tag__name__in=[kwargs['tag_name']])
+    posts = Paginator(posts,4)
+    try:
+        page_number = request.GET.get('page')
+        posts = posts.get_page(page_number)
+    except PageNotAnInteger:
+        posts = posts.get_page(1)
+    except EmptyPage:
+        posts = posts.get_page(1) 
     tags = Tag.objects.all()
     categories = Category.objects.all()
     context = {'posts':posts,'categories':categories,'tags':tags}
