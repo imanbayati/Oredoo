@@ -1,6 +1,7 @@
         {% extends 'base.html'%}
         {% load static %}
         {% block content %}
+        {% load humanize %}
 
         <div class="section-heading " >
             <div class="container-fluid">
@@ -38,7 +39,7 @@
                                 <ul class="entry-meta">
                                     <li class="post-author"> <a href="author.html">{{post.author.username}}</a></li>
                                     <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1 "> <span class="line"></span>{{post.category.name}}</a></li>
-                                    <li class="post-date"> <span class="line"></span> {{post.published_date|date:'d M Y'}}</li>
+                                    <li class="post-date"> <span class="line"></span> {{post.published_date|naturaltime}}</li>
                                 </ul>
                                 <div class="post-exerpt">
                                     <p>{{post.content|truncatechars:200}}</p>
