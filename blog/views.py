@@ -5,6 +5,8 @@ from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 # Create your views here.
 def blog_home_page(request,**kwargs):
     posts = Post.objects.filter(status=1)
+    recent_posts = Post.objects.filter(status=1)
+    recent_posts = recent_posts[:4]
     if kwargs.get('cat_name'):
         posts = posts.filter(category__name=kwargs['cat_name'])
     if kwargs.get('tag_name'):
@@ -19,7 +21,7 @@ def blog_home_page(request,**kwargs):
         posts = posts.get_page(1) 
     tags = Tag.objects.all()
     categories = Category.objects.all()
-    context = {'posts':posts,'categories':categories,'tags':tags}
+    context = {'posts':posts,'categories':categories,'tags':tags,'recent_posts':recent_posts}
     return render(request, 'blog/home.html',context)
     
 
