@@ -2,6 +2,7 @@ from django.shortcuts import render , get_object_or_404
 from blog.models import Post,Category
 from taggit.models import Tag
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
+from blog.forms import CommentForm
 # Create your views here.
 def blog_home_page(request,**kwargs):
     posts = Post.objects.filter(status=1)
@@ -29,16 +30,24 @@ def blog_single_page(request,pid):
     post = get_object_or_404(Post,pk=pid)
     tags = Tag.objects.all()
     categories = Category.objects.all()
-    context = {'post':post,'categories':categories,'tags':tags}
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+    form = CommentForm()
+    context = {'post':post,'categories':categories,'tags':tags,'form':form}
     return render(request,'blog/single.html',context)
 
 def blog_search_page(request):
-    posts = Post.objects.filter(status=1)
+    tags = Tag.objects.all()
+    categories = Category.objects.all()
+    recent_posts = Post.objects.filter(status=1)
+    recent_posts = recent_posts[:4]
     if request.method == 'GET':
         result = request.GET.get('s')
-        posts = posts.filter(content__contains=result)
+        posts = Post.objects.filter(content__contains=result)
         if posts:
-            context = {'posts':posts}
+            context = {'categories':categories,'tags':tags,'recent_posts':recent_posts,'posts':posts}
             return render(request,'blog/home.html',context)
         else:
             return render(request,'404.html')
