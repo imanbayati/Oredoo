@@ -10,4 +10,4 @@ class NewsletterForm(ModelForm):
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ['name','email','message','post']

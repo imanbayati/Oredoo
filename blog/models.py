@@ -35,7 +35,7 @@ class Post(models.Model):
         return self.title  
     
 class Comment(models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,default=False)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()

@@ -1,8 +1,9 @@
 from django.shortcuts import render , get_object_or_404
-from blog.models import Post,Category
+from blog.models import Post,Category,Comment
 from taggit.models import Tag
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from blog.forms import CommentForm
+from django.contrib import messages
 # Create your views here.
 def blog_home_page(request,**kwargs):
     posts = Post.objects.filter(status=1)
@@ -28,14 +29,20 @@ def blog_home_page(request,**kwargs):
 
 def blog_single_page(request,pid):
     post = get_object_or_404(Post,pk=pid)
+    recent_posts = Post.objects.filter(status=1)
+    recent_posts = recent_posts[:4]
     tags = Tag.objects.all()
+    comments = Comment.objects.filter(post=post.id,approved=True)
     categories = Category.objects.all()
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request,'your comment submited')
+        else:
+            messages.error(request,'your comment not submited')
     form = CommentForm()
-    context = {'post':post,'categories':categories,'tags':tags,'form':form}
+    context = {'post':post,'categories':categories,'tags':tags,'form':form,'comments':comments,'recent_posts':recent_posts}
     return render(request,'blog/single.html',context)
 
 def blog_search_page(request):

@@ -171,61 +171,29 @@
                             <!--post-single-comments-->
                             <div class="post-single-comments">
                                 <!--Comments-->
-                                <h4 >3 Comments</h4>
+                                <h4 >{{comments|length}} comments</h4>
                                 <ul class="comments">
                                     <!--comment1-->
+                                    {% for comment in comments %}
                                     <li class="comment-item pt-0">
-                                        <img src="assets/img/other/user1.jpg" alt="">
+                                        <img src="{% static 'img/other/user1.jpg' %}" alt="">
                                         <div class="content">
                                             <div class="meta">
                                                 <ul class="list-inline">
-                                                    <li><a href="#">Nirmaine Nicole</a> </li>
+                                                    <li><a href="#">{{comment.name}}</a> </li>
                                                     <li class="slash"></li>
-                                                    <li>3 Months Ago</li>
+                                                    <li>{{comment.updated_date|naturaltime}}</li>
                                                 </ul>
                                             </div>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci eum placeat
-                                                quod non fugiat aliquid sit similique!
-                                            </p>
+                                            <p>{{comment.message}}</p>
                                             <a href="#" class="btn-reply"><i class="las la-reply"></i> Reply</a>
                                         </div>
                                 
                                     </li>
-                                    <!--comment2-->
-                                    <li class="comment-item">
-                                        <img src="assets/img/other/use2.jpg" alt="">
-                                        <div class="content">
-                                            <div class="meta">
-                                                <ul class="list-inline">
-                                                    <li><a href="#">adam smith</a> </li>
-                                                    <li class="slash"></li>
-                                                    <li>3 Months Ago</li>
-                                                </ul>
-                                            </div>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci eum placeat
-                                                quod non fugiat aliquid sit similique!
-                                            </p>
-                                            <a href="#" class="btn-reply"><i class="las la-reply"></i> Reply</a>
-                                        </div>
-                                    </li>
-                                       <!--comment3-->
-                                    <li class="comment-item">
-                                        <img src="assets/img/other/user3.jpg" alt="">
-                                        <div class="content">
-                                            <div class="meta">
-                                                <ul class="list-inline">
-                                                    <li><a href="#">Emma david</a> </li>
-                                                    <li class="slash"></li>
-                                                    <li>3 Months Ago</li>
-                                                </ul>
-                                            </div>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus at doloremque adipisci eum placeat
-                                                quod non fugiat aliquid sit similique!
-                                            </p>
-                                            <a href="#" class="btn-reply"><i class="las la-reply"></i> Reply</a>
-                                        </div>
-                                    </li>
-                                
+                                    {% empty %}
+                                    <p>there is no comment please send first comment</p>
+                                    {% endfor %}
+                                    
                                 </ul>
                                 <!--Leave-comments-->
                                 <div class="comments-form">
@@ -234,11 +202,8 @@
                                     <form class="form " action="{% url 'blog:single' pid=post.id %}" method="post" id="main_contact_form">
                                         {% csrf_token %}
                                         <p>Your email adress will not be published ,Requied fileds are marked*.</p>
-                                        <div class="alert alert-success contact_msg" style="display: none" role="alert">
-                                            Your message was sent successfully.
-                                        </div>
                                         <div class="row">
-                                            <input type="hidden" name="post" value="{{post.id}}" id="name" class="form-control" placeholder="Name*" required="required">
+                                            <input type="hidden" id="post" name="post" value="{{post.id}}" class="form-control">
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
