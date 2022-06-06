@@ -91,11 +91,28 @@
 
 
                     <!--search-icon-->
-                    <div class="search-icon">
+                    <div class="search-icon mr-3">
                         <i class="las la-search"></i>
                     </div>
+                    <!--user-->
+                    <div class="user-site d-flex">
+                        {% if not request.user.is_authenticated %}
+                        <a href="{% url 'accounts:login' %}">
+                            <i class="fas fa-user"></i>
+
+                        </a>
+                        {% endif %}
+                        {% if request.user.is_authenticated %}
+                        <a class="mr-3 text-muted">
+                            hi {{request.user.username}}
+                        </a>
+                        <a href="{% url 'accounts:logout' %}">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                        {% endif %}
+                    </div>
                     {% for message in messages %}
-                    <div class="p-0 mas_alert">
+                    <div class="p-0 mas_alert ml-3">
                       <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="True">&times;</span>

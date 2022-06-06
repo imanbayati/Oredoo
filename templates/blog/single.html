@@ -176,7 +176,7 @@
                                     <!--comment1-->
                                     {% for comment in comments %}
                                     <li class="comment-item pt-0">
-                                        <img src="{% static 'img/other/user1.jpg' %}" alt="">
+                                        <img src="{% static 'img/avatar.png' %}" alt="">
                                         <div class="content">
                                             <div class="meta">
                                                 <ul class="list-inline">
@@ -204,7 +204,18 @@
                                         <p>Your email adress will not be published ,Requied fileds are marked*.</p>
                                         <div class="row">
                                             <input type="hidden" id="post" name="post" value="{{post.id}}" class="form-control">
-
+                                            {% if request.user.is_authenticated %}
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" value="{{request.user.get_full_name}}" class="form-control" placeholder="Name*" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" value="{{request.user.email}}" class="form-control" placeholder="Email" name="email" id="email" class="form-control" placeholder="Email*" required="required">
+                                                </div>
+                                            </div>
+                                            {% else %}
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <input type="text" name="name" class="form-control" placeholder="Name*" required="required">
@@ -215,6 +226,7 @@
                                                     <input type="email" name="email" id="email" class="form-control" placeholder="Email*" required="required">
                                                 </div>
                                             </div>
+                                            {% endif %}
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Message*" required="required"></textarea>

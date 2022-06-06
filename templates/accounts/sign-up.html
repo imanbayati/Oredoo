@@ -1,0 +1,87 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="icon" sizes="16x16" href="{% static 'img/favicon.png' %}">
+
+    <!-- Title -->
+    <title> Oredoo - Personal Blog HTML Template </title>
+  
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/line-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body>
+    <!--Login-->
+
+    <section class="login">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 m-auto">
+                    <div class="login-content">
+                        <h4>Sign up</h4>
+                        <!--form-->              
+                        <form  action="{% url 'accounts:signup' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First name*" name="first_name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last_name*" name="last_name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Username*" name="username">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email Address*" name="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password*" name="password1">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password*" name="password2">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn-custom">Sign Up</button>
+                            </div>
+                            <p class="form-group text-center">Already have an account? <a href="{% url 'accounts:login' %}" class="btn-link">Login</a> </p>
+                        </form>
+                           <!--/-->
+                    </div> 
+                </div>
+             </div>
+        </div>
+    </section>  
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- JS Plugins  -->
+    <script  src="{% static 'js/theia-sticky-sidebar.js' %}"></script>
+    <script src="{% static 'js/ajax-contact.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/switch.js' %}"></script>
+    <script src="{% static 'js/jquery.marquee.js' %}"></script>
+    
+    <!-- JS main  -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>
+ 

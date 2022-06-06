@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'django_jinja',
     'blog',
     'taggit',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'accounts'
 ]
 
 MIDDLEWARE = [

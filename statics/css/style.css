@@ -1420,7 +1420,7 @@ ul {
   transition: all 0.5s ease-in-out;
 }
 
-.header-right .search-icon i {
+.header-right .search-icon i{
   line-height: 35px;
   color: #191B1D;
   font-size: 20px;
