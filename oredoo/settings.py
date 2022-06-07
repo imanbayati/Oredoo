@@ -53,7 +53,9 @@ INSTALLED_APPS = [
     'blog',
     'taggit',
     'django.contrib.humanize',
-    'accounts'
+    'accounts',
+    'django_social_share',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [

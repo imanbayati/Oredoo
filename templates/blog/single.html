@@ -2,6 +2,7 @@
     {% load static %}
     {% block content %}
     {% load humanize %}
+    {% load social_share %}
     <!--post-single-->
     <section class="post-single post-single-layout-2">
         <div class="post-single-image">
@@ -17,8 +18,7 @@
                              <div class="post-single-title">  
                                 <h3> {{post.title}}</h3>        
                                 <ul class="entry-meta">
-                                    <li class="post-author-img"><img src="{% static 'img/author/1.jpg' %}" alt=""></li>
-                                    <li class="post-author"> <a href="author.html">{{post.author.username}}</a></li>
+                                    <li class="post-author">{{post.author.username}}</li>
                                     <li class="entry-cat"> <a href="blog-layout-1.html" class="category-style-1"> <span class="line"></span> {{post.category.name}}</a></li>
                                     <li class="post-date"> <span class="line"></span> {{post.published_date|naturaltime}}</li>
                                 </ul>
@@ -46,81 +46,30 @@
                                     <p>Share on :</p>
                                     <ul class="list-inline">
                                         <li>
-                                            <a href="#">
-                                                <i class="fab fa-facebook"></i>
-                                            </a>
+                                            {% post_to_facebook object_or_url '<i class="fa-brands fa-facebook share-icon"></i>' %}
                                         </li>
+                                        <!--
                                         <li>
+                                            
                                             <a href="#">
                                                 <i class="fab fa-instagram"></i>
                                             </a>
                                         </li>
+                                        -->
                                         <li>
-                                            <a href="#">
-                                                <i class="fab fa-twitter"></i>
-                                            </a>
+                                            {% post_to_twitter "New Song: {{object.title}}. Check it out!" object_or_url '<i class="fa-brands fa-twitter share-icon"></i>' %}
                                         </li>
                                         <li>
-                                            <a href="#" >
-                                                <i class="fab fa-youtube"></i>
-                                            </a>
-                                        </li>
+                                            {% post_to_telegram "New Song: {{object.title}}" object_or_url '<i class="fa-brands fa-telegram share-icon"></i>' %}                                        </li>
                                         <li>
-                                            <a href="#" >
-                                                <i class="fab fa-pinterest"></i>
-                                            </a>
+                                            {% post_to_whatsapp object_or_url '<i class="fa-brands fa-whatsapp share-icon"></i>' %}
                                         </li>
                                     </ul>
                                 </div>                      
                             </div>
 
-                            <!--post-single-author-->
-                            <div class="post-single-author ">
-                                <div class="authors-info">
-                                    <div class="image">
-                                        <a href="author.html" class="image">
-                                            <img src="assets/img/author/1.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <h4>sarah smith</h4>
-                                        <p> Etiam vitae dapibus rhoncus. Eget etiam aenean nisi montes felis pretium donec veni. Pede vidi condimentum et aenean hendrerit.
-                                            Quis sem justo nisi varius.
-                                        </p>
-                                        <div class="social-media">
-                                            <ul class="list-inline">
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-instagram"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fab fa-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" >
-                                                        <i class="fab fa-youtube"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" >
-                                                        <i class="fab fa-pinterest"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                              <!--post-single-Related posts-->
-                             <div class="post-single-next-previous">
+                             <div class="post-single-next-previous mt-5">
                                 <div class="row ">
                                     <!--prevvious post-->
                                     <div class="col-md-6">
@@ -251,9 +200,6 @@
                         <div class="sidebar">
                               <!--categories-->
                             {% include 'blog/categories.html' %}
-
-                            <!--stay connected-->
-                            {% include 'blog/stay_connected.html' %}
                             <!--Tags-->
                             {% include 'blog/tags.html' %}
                             <!--popular-posts-->
