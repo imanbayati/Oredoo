@@ -48,14 +48,7 @@
                                         <li>
                                             {% post_to_facebook object_or_url '<i class="fa-brands fa-facebook share-icon"></i>' %}
                                         </li>
-                                        <!--
-                                        <li>
-                                            
-                                            <a href="#">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                        -->
+    
                                         <li>
                                             {% post_to_twitter "New Song: {{object.title}}. Check it out!" object_or_url '<i class="fa-brands fa-twitter share-icon"></i>' %}
                                         </li>
@@ -68,57 +61,8 @@
                                 </div>                      
                             </div>
 
-                             <!--post-single-Related posts-->
-                             <div class="post-single-next-previous mt-5">
-                                <div class="row ">
-                                    <!--prevvious post-->
-                                    <div class="col-md-6">
-                                        <div class="small-post">
-                                            <div class="small-post-image">
-                                                <a href="post-single.html">
-                                                    <img src="assets/img/blog/1.jpg" alt="...">
-                                                </a>
-                                            </div>
-                            
-                                            <div class="small-post-content">
-                                            <small>  <a href="post-single.html"> <i class="las la-arrow-left"></i>Previous post</a></small>
-                                            <p>
-                                                <a href="post-single.html">You can’t build a reputation on what you are going to do.</a>
-                                            </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/-->
-
-                                    <!--next post-->
-                                    <div class="col-md-6">
-                                        <div class="small-post">
-                                            <div class="small-post-image">
-                                                <a href="post-single.html">
-                                                    <img src="assets/img/blog/2.jpg" alt="...">
-                                                </a>
-                                            </div>
-                            
-                                            <div class="small-post-content">
-                                                <small> <a href="post-single.html">Next post <i class="las la-arrow-right"></i></a> </small>
-                                                <p>
-                                                    <a href="post-single.html">Brand yourself for the career you want, not the job you have</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--/-->
-                                </div>
-                            </div>
-                            <!--post-single-Ads-->
-                            <div class="post-single-ads ">
-                                <div class="ads">
-                                    <img src="assets/img/ads/ads.jpg" alt="">
-                                </div>
-                            </div>
-                            
                             <!--post-single-comments-->
-                            <div class="post-single-comments">
+                            <div class="post-single-comments mt-5">
                                 <!--Comments-->
                                 <h4 >{{comments|length}} comments</h4>
                                 <ul class="comments">
