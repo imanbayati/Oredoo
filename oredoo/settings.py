@@ -92,10 +92,21 @@ WSGI_APPLICATION = 'oredoo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'd2knohcc3lvifs',
+        'USER':'kdqhanpwiqhxbs',
+        'PASSWORD':'27f53aa09373f681b09854c6f86a2b7ac7c3391cf83f5dadb3ea59a5a50c67ea',
+        'HOST':'ec2-3-213-228-206.compute-1.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
