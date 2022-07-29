@@ -106,7 +106,7 @@ DATABASES = {
         'USER':'kdqhanpwiqhxbs',
         'PASSWORD':'27f53aa09373f681b09854c6f86a2b7ac7c3391cf83f5dadb3ea59a5a50c67ea',
         'HOST':'ec2-3-213-228-206.compute-1.amazonaws.com',
-        'PORT':'8000'
+        'PORT':'5432'
     }
 }
 
